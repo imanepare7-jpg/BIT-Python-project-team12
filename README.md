@@ -4,3 +4,5 @@ Team members:
 OUEDRAOGO Oumarou
 PARE Kowoma Imane Zilal
 OUEDRAOGO Jessica
+OUEDRAOGO Latifa
+OUEDRAGO Franck
