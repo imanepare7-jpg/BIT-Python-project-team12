@@ -5,7 +5,7 @@ class HumanBF:
         self.Nom=nom
         self.Sexe=sexe
         self.Prenom=prenom
-        self.Email=email
+        self.Email=email 
     
     
     def get_id(self):
