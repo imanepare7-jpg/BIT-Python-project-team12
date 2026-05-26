@@ -10,7 +10,7 @@ def students():
         print("  5. Delete Students")
         print("  0. Return toMain Menu")
         print()
-        choice = input("  Your choice : ").strip()
+        choice = input("  Your choice : ")
 
         if choice == "1":
             # Add a students
@@ -37,8 +37,6 @@ def students():
         elif choice == "0":
             break
 
-        elif choice == "0":
-            break
         else:
             print("  Invalid choice. Please try again.")
 
@@ -56,7 +54,7 @@ def teachers():
         print("  5. Delete Teacher")
         print("  0. Return to Main Menu")
         print()
-        choice = input("  Your choice : ").strip()
+        choice = input("  Your choice : ")
 
         if choice == "1":
             # Add a teacher
@@ -85,16 +83,16 @@ def teachers():
             print("  Invalid choice. Please try again.")
         
 
-def Subjects():
+def Administrators():
     while True:
         print("Burkina Institute of Technology")
         print("\n  === Subjects management ===")
-        print("  1. Add Subjects")
-        print("  2. View subject details")
-        print("  3. Delete Subject")
+        print("  1. Add Administrator")
+        print("  2. View Administrator details")
+        print("  3. Delete Administrator")
         print("  0. Return to Main Menu")
         print()
-        choice = input("  Your choice : ").strip()
+        choice = input("  Your choice : ")
 
         if choice == "1":
             # Add a subject
@@ -123,7 +121,7 @@ def studentsMarks():
         print("  4. Class statistics")
         print("  0. Return to main menu")
         print()
-        choice = input("  Your choice : ").strip()
+        choice = input("  Your choice : ")
 
         if choice == "1":
             # Add marks for a student
@@ -149,11 +147,11 @@ def main():
         print("\n  === Main Menu ===\n")
         print("  1. Students Management")
         print("  2. Teachers Management")
-        print("  3. Subjects Management")
+        print("  3. Administator Management")
         print("  4. Marks & Absences & Transcripts")
         print("  0. Quit")
         print()
-        choice = input("  Your choice : ").strip()
+        choice = input("  Your choice : ")
 
         if choice == "1":
             # Students Management
