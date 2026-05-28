@@ -6,3 +6,4 @@ PARE Kowoma Imane Zilal
 OUEDRAOGO Jessica
 OUEDRAOGO Latifa
 OUEDRAGO Franck
+SALOGHO victoria Alida 
