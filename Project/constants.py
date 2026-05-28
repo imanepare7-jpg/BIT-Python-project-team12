@@ -7,19 +7,19 @@ Contient toutes les constantes globales utilisées dans le projet.
 # Fichier de sauvegarde des données
 DATA_FILE: str = "school_data.json"
 
-# Nom de l'école
+# School name
 SCHOOL_NAME: str = "Burkina Institute of Technology"
 
-# Note minimale pour être admis
+# minimum grade to pass
 PASSING_GRADE: float = 10.0
 
-# Tuple des mentions (immuable — ne change jamais)
+# Tuple of grades (immuable — ne change jamais)
 MENTIONS: tuple = (
-    "Insuffisant",
-    "Passable",
-    "Assez Bien",
-    "Bien",
-    "Très Bien",
+    "fail",
+    "Pass",
+    "Fairly Good",
+    "Good",
+    "Very Good",
     "Excellent"
 )
 
