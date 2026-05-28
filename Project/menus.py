@@ -26,7 +26,7 @@ def menu_etudiants(ecole: Ecole):
         if choix == "1":
             # Ajouter un étudiant
             print("\n  -- NEW STUDENTS --")
-            nom    = input("  Nom         : ").strip()
+            nom    = input("  NAME         : ").strip()
             prenom = input("  Prénom      : ").strip()
             email  = input("  Email       : ").strip()
             classe = input("  Classe      : ").strip()
