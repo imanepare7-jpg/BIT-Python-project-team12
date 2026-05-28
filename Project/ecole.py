@@ -5,54 +5,54 @@ import json
 import datetime
 from typing import Optional
 
-from models.etudiant   import Etudiant
-from models.professeur import Professeur
-from models.matiere    import Matiere
+from models.student   import Student
+from models.teacher import Teacher
+from models.subject    import Subject
 from constants         import DATA_FILE, PASSING_GRADE
 
 
-class Ecole:
+class School:
 
-    def __init__(self, nom: str):
+    def __init__(self, name: str):
 
-        self.__nom                   = nom
-        self.__etudiants: dict       = {}   
-        self.__professeurs: dict     = {}   
-        self.__matieres: dict        = {}   
-        self.__compteur_etudiant: int = 1
-        self.__compteur_prof: int    = 1
+        self.__name                  = name
+        self.__studends: dict       = {}   
+        self.__teacher: dict     = {}   
+        self.__subject: dict        = {}   
+        self.__student_counter: int = 1
+        self.__teacher counter: int    = 1
 
-    def get_nom(self) -> str:
+    def get_name(self) -> str:
 
         return self.__nom
 
-    # ── Gestion Etudiants ─────────────────────────────────────
+    # ── Student Management ─────────────────────────────────────
 
-    def ajouter_etudiant(self, nom: str, prenom: str, email: str,
-                         classe: str, date_naissance: str) -> Etudiant:
+    def add_student(self, name: str, first name: str, email: str,
+                         class: str, date_of_birth: str) -> Student:
 
-        id_etudiant = f"ETU{self.__compteur_etudiant:04d}"
-        self.__compteur_etudiant += 1    # incrémentation arithmétique
-        etudiant = Etudiant(id_etudiant, nom, prenom, email, classe, date_naissance)
-        self.__etudiants[id_etudiant] = etudiant
-        return etudiant
+        student_id = f"STU{self.__student_counter:04d}"
+        self.__student_counter += 1    # arithmetic incrementation
+        student = Student(student_id, name, first_namme, email,student_class, date_of_birth)
+        self.__students[student_id] = student
+        return student
 
-    def get_etudiant(self, id: str) -> Optional[Etudiant]:
+    def get_student(self, student_id: str) -> Optional[Student]:
 
-        return self.__etudiants.get(id)
+        return self.__student.get(student_id)
 
-    def get_tous_etudiants(self) -> list:
+    def get_all_students(self) -> list:
   
-        return list(self.__etudiants.values())
+        return list(self.__student.values())
 
-    def supprimer_etudiant(self, id: str) -> bool:
+    def delete_student(self, student_.id: str) -> bool:
 
-        if id in self.__etudiants:
-            del self.__etudiants[id]
+        if student_id in self.__students:
+            del self.__student[student_id]
             return True
         return False
 
-    def rechercher_etudiant(self, terme: str) -> list:
+    def search_student(self, terme: str) -> list:
 
         terme = terme.lower()
         return [
