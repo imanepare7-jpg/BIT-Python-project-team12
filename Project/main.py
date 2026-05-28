@@ -1,18 +1,18 @@
 # ── Imports ──────────────────────────────────────────────────
-from ecole      import Ecole
-from menus      import menu_principal
+from school      import School
+from menus      import main_menu
 from constants  import SCHOOL_NAME
-from models     import Etudiant, Professeur   
+from models     import Student, Teacher  
 
 
-# ── Fonction principale ───────────────────────────────────────
+# ── Main Function ───────────────────────────────────────
 
 def main():
-    ecole = Ecole(SCHOOL_NAME)
-    ecole.charger()          
-    menu_principal(ecole) 
+    school = School(SCHOOL_NAME)
+    school.load()          
+    main_menu(school) 
 
 
-# ── Lancement ─────────────────────────────────────────────────
+# ── Execution ─────────────────────────────────────────────────
 if __name__ == "__main__":
     main()
