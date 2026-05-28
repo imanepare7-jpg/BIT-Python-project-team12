@@ -15,7 +15,7 @@ class Person:
         :param email: adresse email
         """
         self.__id     = id        # attribut privé (encapsulation)
-        self.__nom    = nom
+        self.__nom    = name
         self.__prenom = prenom
         self.__email  = email
 
