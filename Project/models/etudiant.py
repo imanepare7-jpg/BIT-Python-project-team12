@@ -5,30 +5,19 @@ Contient la classe Etudiant qui hérite de Person.
 """
 
 from models.Human  import Person
-from constants      import PASSING_GRADE, MENTIONS, SEUILS_MENTIONS
+from constants import PASSING_GRADE, MENTIONS, SEUILS_MENTIONS
 
 
 class Etudiant(Person):
-    """
-    Représente un étudiant. Hérite de Person.
-    Ajoute : classe, date de naissance, notes, absences.
-    Démontre : héritage, encapsulation, polymorphisme.
-    """
+   " Ajoute : classe, date de naissance, notes, absences. "
 
     def __init__(self, id: str, nom: str, prenom: str, email: str,
                  classe: str, date_naissance: str):
-        """
-        Constructeur de Etudiant.
-        :param classe: classe de l'étudiant (ex: L1, L2)
-        :param date_naissance: date de naissance (JJ/MM/AAAA)
-        """
-        super().__init__(id, nom, prenom, email)   # appel du constructeur parent
+        super().__init__(id, nom, prenom, email)   
         self.__classe          = classe
         self.__date_naissance  = date_naissance
-        self.__notes: dict     = {}   # {matiere: [note1, note2, ...]}
-        self.__absences: list  = []   # [{"date": ..., "matiere": ...}]
-
-    # ── Getters ──────────────────────────────────────────────
+        self.__notes: dict     = {}  
+        self.__absences: list  = []   
 
     def get_classe(self) -> str:
         """Retourne la classe de l'étudiant."""
@@ -49,23 +38,14 @@ class Etudiant(Person):
     # ── Notes & Moyennes ─────────────────────────────────────
 
     def ajouter_note(self, matiere: str, note: float):
-        """
-        Ajoute une note pour une matière donnée.
-        :param matiere: nom de la matière
-        :param note: note entre 0 et 20
-        """
+        "  Ajoute une note pour une matière donnée.  "
         if matiere not in self.__notes:
             self.__notes[matiere] = []
         self.__notes[matiere].append(note)
 
     def get_moyenne_matiere(self, matiere: str) -> float:
-        """
-        Calcule la moyenne pour une matière.
-        :param matiere: nom de la matière
-        :return: moyenne ou 0.0 si aucune note
-        """
+        """Calcule la moyenne pour une matière. """
         if matiere in self.__notes and len(self.__notes[matiere]) > 0:
-            # Opérations arithmétiques : somme / nombre
             return sum(self.__notes[matiere]) / len(self.__notes[matiere])
         return 0.0
 
@@ -86,33 +66,22 @@ class Etudiant(Person):
         Utilise les tuples MENTIONS et SEUILS_MENTIONS.
         """
         moyenne: float = self.get_moyenne_generale()
-        mention_actuelle: str = MENTIONS[0]   # "Insuffisant" par défaut
+        mention_actuelle: str = MENTIONS[0]   
         for i in range(len(SEUILS_MENTIONS)):
             if moyenne >= SEUILS_MENTIONS[i]:
                 mention_actuelle = MENTIONS[i]
         return mention_actuelle
 
-    # ── Absences ─────────────────────────────────────────────
-
     def ajouter_absence(self, date: str, matiere: str):
-        """
-        Enregistre une absence.
-        :param date: date de l'absence (JJ/MM/AAAA)
-        :param matiere: matière concernée
-        """
+        """Enregistre une absence."""
         self.__absences.append({"date": date, "matiere": matiere})
 
-    # ── Affichage (polymorphisme) ─────────────────────────────
-
     def afficher_info(self):
-        """
-        Affiche les informations complètes de l'étudiant.
-        Redéfinit la méthode de Person — polymorphisme.
-        """
+        """Affiche les informations complètes de l'étudiant."""
         print(f"\n{'='*45}")
         print(f"  ETUDIANT : {self.get_nom_complet()}")
         print(f"{'='*45}")
-        super().afficher_info()     # appel de la méthode parente
+        super().afficher_info()     
         print(f"  Classe   : {self.__classe}")
         print(f"  Naissance: {self.__date_naissance}")
         print(f"  Absences : {self.get_nombre_absences()}")
@@ -120,8 +89,6 @@ class Etudiant(Person):
         statut = "ADMIS ✓" if self.est_admis() else "NON ADMIS ✗"
         print(f"  Moyenne  : {moy:.2f}/20  ({statut})")
         print(f"  Mention  : {self.get_mention()}")
-
-    # ── Sérialisation JSON ────────────────────────────────────
 
     def to_dict(self) -> dict:
         """Convertit l'étudiant en dictionnaire pour sauvegarde JSON."""
