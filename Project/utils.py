@@ -65,3 +65,4 @@ def lire_entier(message: str, mini: int = 1) -> int:
                 print(f"  [!] Entrez un nombre >= {mini}.")
         except ValueError:
             print("  [!] Veuillez entrer un nombre entier.")
+")
