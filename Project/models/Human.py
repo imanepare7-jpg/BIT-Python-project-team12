@@ -1,25 +1,13 @@
 #HumanBF is the class that other must heritate
 class Person:
-    """
-    Classe parente représentant une personne.
-    Sert de base pour Etudiant et Professeur (héritage).
-    Démontre : encapsulation, abstraction.
-    """
+    """ Classe parente représentant une personne. """
 
     def __init__(self, id: str, nom: str, prenom: str, email: str):
-        """
-        Constructeur de Person.
-        :param id: identifiant unique
-        :param nom: nom de famille
-        :param prenom: prénom
-        :param email: adresse email
-        """
-        self.__id     = id        # attribut privé (encapsulation)
+        """Constructeur de Person."""
+        self.__id     = id        
         self.__nom    = name
         self.__prenom = prenom
         self.__email  = email
-
-    # ── Getters (encapsulation) ──────────────────────────────
 
     def get_id(self) -> str:
         """Retourne l'identifiant."""
@@ -41,13 +29,8 @@ class Person:
         """Retourne le nom complet (prénom + nom)."""
         return f"{self.__prenom} {self.__nom}"
 
-    # ── Méthodes ─────────────────────────────────────────────
-
     def afficher_info(self):
-        """
-        Affiche les informations de base.
-        Redéfinie dans Etudiant et Professeur (polymorphisme).
-        """
+        """Affiche les informations de base."""
         print(f"  ID     : {self.__id}")
         print(f"  Nom    : {self.get_nom_complet()}")
         print(f"  Email  : {self.__email}")
