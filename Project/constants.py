@@ -1,27 +1,28 @@
 """
 constants.py
 ------------
-Contains all global constants used in the project. 
+Contient toutes les constantes globales utilisées dans le projet.
 """
 
-# Data backup file
+# Fichier de sauvegarde des données
 DATA_FILE: str = "school_data.json"
 
-# School name
+# Nom de l'école
 SCHOOL_NAME: str = "Burkina Institute of Technology"
 
-# minimum grade to pass
+# Note minimale pour être admis
 PASSING_GRADE: float = 10.0
 
-# Tuple of grades (immutable — never changes)
+# Tuple des mentions (immuable — ne change jamais)
 MENTIONS: tuple = (
-    "fail",
-    "Pass",
-    "Fairly Good",
-    "Good",
-    "Very Good",
+    "Insuffisant",
+    "Passable",
+    "Assez Bien",
+    "Bien",
+    "Très Bien",
     "Excellent"
 )
 
-# Tuple of thresholds corresponding to the mentions
+# Tuple des seuils correspondants aux mentions
 SEUILS_MENTIONS: tuple = (0, 10, 12, 14, 16, 18)
+
