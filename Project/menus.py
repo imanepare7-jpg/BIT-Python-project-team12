@@ -6,7 +6,7 @@ from utils  import effacer_ecran, pause, afficher_entete, lire_float, lire_entie
 from constants import SCHOOL_NAME
 
 
-# ── Menu Etudiants ────────────────────────────────────────────
+#Menu Etudiants 
 
 def menu_etudiants(ecole: Ecole):
 
@@ -90,7 +90,7 @@ def menu_etudiants(ecole: Ecole):
             break
 
 
-# ── Menu Professeurs ──────────────────────────────────────────
+# Menu Professeurs
 
 def menu_professeurs(ecole: Ecole):
     """Menu complet de gestion des professeurs."""
@@ -177,7 +177,7 @@ def menu_professeurs(ecole: Ecole):
             break
 
 
-# ── Menu Matières ─────────────────────────────────────────────
+#Menu Matières 
 
 def menu_matieres(ecole: Ecole):
     """Menu complet de gestion des matières."""
@@ -230,7 +230,7 @@ def menu_matieres(ecole: Ecole):
             break
 
 
-# ── Menu Notes & Absences ─────────────────────────────────────
+# Menu Notes & Absences 
 
 def menu_notes_absences(ecole: Ecole):
     """Menu de gestion des notes, absences et bulletins."""
@@ -284,7 +284,7 @@ def menu_notes_absences(ecole: Ecole):
             break
 
 
-# ── Menu Principal ────────────────────────────────────────────
+# Menu Principal
 
 def menu_principal(ecole: Ecole):
     """Menu principal — point d'entrée de la navigation."""
