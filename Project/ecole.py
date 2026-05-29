@@ -20,7 +20,7 @@ class School:
         self.__teacher: dict     = {}   
         self.__subject: dict        = {}   
         self.__student_counter: int = 1
-        self.__teacher counter: int    = 1
+        self.__teacher_counter: int    = 1
 
     def get_name(self) -> str:
 
