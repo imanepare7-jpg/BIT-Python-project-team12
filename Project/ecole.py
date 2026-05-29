@@ -5,10 +5,10 @@ import json
 import datetime
 from typing import Optional
 
-from models.student   import Student
+from models.student import Student
 from models.teacher import Teacher
-from models.subject    import Subject
-from constants         import DATA_FILE, PASSING_GRADE
+from models.subject import Subject
+from constants import DATA_FILE, PASSING_GRADE
 
 
 class School:
@@ -28,8 +28,7 @@ class School:
 
     # ── Student Management ─────────────────────────────────────
 
-    def add_student(self, name: str, first name: str, email: str,
-                         class: str, date_of_birth: str) -> Student:
+    def add_student(self, name: str, first name: str, email: str, classe: str, date_of_birth: str) -> Student:
 
         student_id = f"STU{self.__student_counter:04d}"
         self.__student_counter += 1    # arithmetic incrementation
