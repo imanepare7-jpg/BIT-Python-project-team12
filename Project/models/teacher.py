@@ -40,6 +40,13 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
         
  ── Methods ──────────────────────────────────────────────
 
+    def add_subject(self, subject: str):
+        """Adds a subject to the list if not already present."""
+        if subject not in self.__subjects:
+            self.__subjects.append(subject)
+
+
+
 
 
 
