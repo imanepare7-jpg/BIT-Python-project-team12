@@ -57,7 +57,6 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
         data["subjects"]       = self.__subjects
         return data
         
-
     @staticmethod
     def from_dict(data: dict) -> "Teacher":
         """Recreates a Teacher object from a dictionary."""
@@ -73,4 +72,3 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
         """
         Displays full teacher information.
         Overrides th
-
