@@ -29,5 +29,10 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
     def get_specialization(self) -> str:
         """Returns the teacher's specialization."""
         return self.__specialization
+        
+    def get_phone(self) -> str:
+        """Returns the phone number."""
+        return self.__phone
+
 
 
