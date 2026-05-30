@@ -3,7 +3,7 @@ models/teacher.py
 -----------------
 This module defines the teacher class, which extends the person class.
 It stores teacher-specific information such as specialisation,
-phune number, and subjects taught .
+phone number, and subjects taught .
 """
 
 from models.person import Person
@@ -11,10 +11,8 @@ from models.person import Person
 
 class Teacher(Person):
     """
-    Represents a teacher. Inherits from Person.
-    Adds: specialization, phone number, list of subjects taught.
-    Demonstrates: inheritance, polymorphism.
-    """
+    CLASS DESCRIPTION
+    Represents a teacher in the school management system
 def __init__(self, id: str, last_name: str, first_name: str, email: str,
                  specialization: str, phone: str):
         """
