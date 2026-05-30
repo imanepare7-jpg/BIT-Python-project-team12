@@ -1,66 +1,79 @@
 """
-models/matiere.py
+models/subject.py
 -----------------
-Contient la classe Matiere représentant un cours.
+Contains the Subject class representing a course.
 """
 
 
-class Matiere:
+class Subject:
     """
-    Représente une matière / cours dans l'école.
-    Attributs : code, nom, crédits, professeur assigné.
+    Represents a subject / course in the school.
+    Attributes: code, name, credits, assigned teacher.
     """
 
-    def __init__(self, code: str, nom: str, credits: int,
-                 professeur_id: str = ""):
-        "Constructeur de Matiere."
-        self.__code          = code
-        self.__nom           = nom
-        self.__credits: int  = credits      
-        self.__professeur_id = professeur_id
+    def __init__(self, code: str, name: str, credits: int,
+                 teacher_id: str = ""):
+        """
+        Constructor for Subject.
+        :param code: unique subject code (e.g. MATH101)
+        :param name: full subject name
+        :param credits: number of credits (int)
+        :param teacher_id: ID of the assigned teacher
+        """
+        self.__code       = code
+        self.__name       = name
+        self.__credits: int = credits     # integer type
+        self.__teacher_id = teacher_id
+
+    # ── Getters ──────────────────────────────────────────────
 
     def get_code(self) -> str:
-        """Retourne le code de la matière."""
+        """Returns the subject code."""
         return self.__code
 
-    def get_nom(self) -> str:
-        """Retourne le nom de la matière."""
-        return self.__nom
+    def get_name(self) -> str:
+        """Returns the subject name."""
+        return self.__name
 
     def get_credits(self) -> int:
-        """Retourne le nombre de crédits."""
+        """Returns the number of credits."""
         return self.__credits
 
-    def get_professeur_id(self) -> str:
-        """Retourne l'ID du professeur assigné."""
-        return self.__professeur_id
+    def get_teacher_id(self) -> str:
+        """Returns the assigned teacher's ID."""
+        return self.__teacher_id
 
-    def set_professeur(self, prof_id: str):
-        """Assigne un professeur à cette matière."""
-        self.__professeur_id = prof_id
+    # ── Setter ───────────────────────────────────────────────
 
-    def afficher_info(self):
-        """Affiche les informations de la matière."""
-        prof = self.__professeur_id if self.__professeur_id else "Non assigné"
-        print(f"  [{self.__code}] {self.__nom} — "
-              f"{self.__credits} crédit(s) — Prof ID: {prof}")
+    def set_teacher(self, teacher_id: str):
+        """Assigns a teacher to this subject."""
+        self.__teacher_id = teacher_id
 
+    # ── Display ──────────────────────────────────────────────
+
+    def display_info(self):
+        """Displays subject information."""
+        teacher = self.__teacher_id if self.__teacher_id else "Not assigned"
+        print(f"  [{self.__code}] {self.__name} — "
+              f"{self.__credits} credit(s) — Teacher ID: {teacher}")
+
+    # ── JSON Serialization ────────────────────────────────────
 
     def to_dict(self) -> dict:
-        """Convertit la matière en dictionnaire pour sauvegarde JSON."""
+        """Converts the subject to a dictionary for JSON saving."""
         return {
-            "code":          self.__code,
-            "nom":           self.__nom,
-            "credits":       self.__credits,
-            "professeur_id": self.__professeur_id
+            "code":       self.__code,
+            "name":       self.__name,
+            "credits":    self.__credits,
+            "teacher_id": self.__teacher_id
         }
 
     @staticmethod
-    def from_dict(data: dict) -> "Matiere":
-        """Recrée un objet Matiere depuis un dictionnaire."""
-        return Matiere(
+    def from_dict(data: dict) -> "Subject":
+        """Recreates a Subject object from a dictionary."""
+        return Subject(
             data["code"],
-            data["nom"],
+            data["name"],
             data["credits"],
-            data.get("professeur_id", "")
+            data.get("teacher_id", "")
         )
