@@ -24,5 +24,5 @@ MENTIONS = (
 )
 
 # Tuple of corresponding score thresholds
-MENTION_THRESHOLDS: tuple = (0, 10, 12, 14, 16, 18)
+MENTION_THRESHOLDS = (0, 10, 12, 14, 16, 18)
 
