@@ -1,29 +1,29 @@
-# School Management System 
+SCHOOL MANAGEMENT SYSTEM
 
 A command-line application built in Python to manage students, teachers, subjects, grades, and absences for a school.
 
-## Description
+DESCRIPTION
 
 This project is a complete school management system that allows a school administration to easily manage its data: student enrollment, teacher registration, grade tracking, report card generation, absence recording, and class statistics. All data is automatically saved in a JSON file and reloaded every time the program starts.
 
-## How to Run the Project
+HOW TO RUN THE PROGRAMM
 
-### Requirements
+Requirements
   Python 3.8 or higher
   No external libraries required (standard modules only)
 
-### Steps
+Steps
 
-# 1. Clone the repository
+1. Clone the repository
 git clone https://github.com/imanepare7-jpg/BIT-Python-project-team12.git
 
-# 2. Go into the project folder
+2. Go into the project folder
 cd BIT-Python-project-team12.git
 
-# 3. Run the application
+3. Run the application
 python main.py
 
-## Features
+FEATURE
 
 -  Add, list, search, and delete students
 -  Add, list, and manage teachers
@@ -37,10 +37,9 @@ python main.py
 -  Automatic data saving to a JSON file
 -  Automatic data loading at startup
 
+PROJECT STRUCTURE
 
-## Project Structure
-
-school_project/
+Project/
  main.py           # Entry point 
  constants.py      # Global constants 
  school.py         # School class
@@ -56,7 +55,7 @@ school_project/
        subject.py    # Subject class — represents a course
 
 
-## Group Members
+GROUP MEMBERS 
 
 | Name              | GitHub                     | Contribution |
 | Member 1 | [@github](https://github.com/) | Person class, Student class |
@@ -64,6 +63,7 @@ school_project/
 | Member 3 | [@github](https://github.com/) | School class (save/load, statistics) |
 | Member 4 | [@github](https://github.com/) | Student & Teacher menus |
 | OUEDRAOGO Oumarou | [@github](https://github.com/) | school.py, person.py, README |
+
 
 
 
