@@ -110,6 +110,6 @@ class Student(Person):
             data["id"], data["last_name"], data["first_name"], data["email"],
             data["class_level"], data["date_of_birth"]
         )
-        s._Student__grades   = data.get("grades", {})
-        s._Student__absences = data.get("absences", [])
+        s.grades   = data.get("grades", {})
+        s.absences = data.get("absences", [])
         return s
