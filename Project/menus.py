@@ -1,18 +1,8 @@
-"""
-menus.py
---------
-Contains all user interface menus.
-Imports School from school.py and utilities from utils.py
-"""
-
 import datetime
 
-from school    import School
-from utils     import clear_screen, pause, display_header, read_float, read_integer
+from school import School
+from utils import clear_screen, pause, display_header, read_float, read_integer
 from constants import SCHOOL_NAME
-
-
-# ── Student Menu ──────────────────────────────────────────────
 
 def student_menu(school: School):
     """Full student management menu."""
@@ -90,10 +80,7 @@ def student_menu(school: School):
 
         elif choice == "0":
             break
-
-
-# ── Teacher Menu ──────────────────────────────────────────────
-
+            
 def teacher_menu(school: School):
     """Full teacher management menu."""
     while True:
@@ -179,9 +166,6 @@ def teacher_menu(school: School):
         elif choice == "0":
             break
 
-
-# ── Subject Menu ──────────────────────────────────────────────
-
 def subject_menu(school: School):
     """Full subject management menu."""
     while True:
@@ -231,9 +215,6 @@ def subject_menu(school: School):
 
         elif choice == "0":
             break
-
-
-# ── Grades & Absences Menu ────────────────────────────────────
 
 def grades_menu(school: School):
     """Grades, absences, report cards and class statistics menu."""
@@ -285,9 +266,6 @@ def grades_menu(school: School):
 
         elif choice == "0":
             break
-
-
-# ── Main Menu ─────────────────────────────────────────────────
 
 def main_menu(school: School):
     """Main menu — entry point for navigation."""
