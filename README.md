@@ -36,19 +36,19 @@ FEATURE
 PROJECT STRUCTURE
 
 Project/
- main.py           # Entry point 
- constants.py      # Global constants 
- school.py         # School class
- utils.py          # Utility functions 
- menus.py          # All user interface menus
- school_data.json  # Auto-generated data file (created on first run)
+ main.py : Entry point 
+ constants.py : Global constants 
+ school.py : School class
+ utils.py : Utility functions 
+ menus.py : All user interface menus
+ school_data.json : Auto-generated data file (created on first run)
 
  models/           
-       __init__.py   # Package initializer
-       person.py     # Person class — parent class (inheritance base)
-       student.py    # Student class — inherits from Person
-       teacher.py    # Teacher class — inherits from Person
-       subject.py    # Subject class — represents a course
+       __init__.py : Package initializer
+       person.py : Person class — parent class (inheritance base)
+       student.py : Student class — inherits from Person
+       teacher.py : Teacher class — inherits from Person
+       subject.py ; Subject class — represents a course
 
  OOP Structure
 
