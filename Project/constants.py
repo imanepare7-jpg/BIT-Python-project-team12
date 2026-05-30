@@ -5,16 +5,16 @@ Global constants used throughout the project.
 """
 
 # JSON data file name
-DATA_FILE: str = "school_data.json"
+DATA_FILE = "school_data.json"
 
 # School name
-SCHOOL_NAME: str = "Burkina Institute of Technology"
+SCHOOL_NAME = "Burkina Institute of Technology"
 
 # Minimum passing grade
-PASSING_GRADE: float = 10.0
+PASSING_GRADE = 10.0
 
 # Tuple of grade mentions (immutable — never changes)
-MENTIONS: tuple = (
+MENTIONS = (
     "Fail",
     "Pass",
     "Satisfactory",
