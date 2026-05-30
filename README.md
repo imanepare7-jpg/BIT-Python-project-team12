@@ -71,12 +71,17 @@ Project/
 
 GROUP MEMBERS 
 
-| Name              | GitHub                     | Contribution |
-| Member 1          | [@github](https://github.com/) | Person class, Student class |
-| Member 2          | [@github](https://github.com/) | Teacher class, Subject class |
-| Member 3          | [@github](https://github.com/) | School class (save/load, statistics) |
-| Member 4          | [@github](https://github.com/) | Student & Teacher menus |
+## Group Members
+
+| Name | GitHub Profile Link | Contribution |
+|------|---------------------|--------------|
+| PARE Kowoma Imane | [GitHub](https://github.com/) | Person class, Student class |
+| OUEDRAOGO Jessica | [GitHub](https://github.com/) | Teacher class, Subject class |
+| OUEDRAOGO Franck | [GitHub](https://github.com/) | School class (save/load, statistics) |
+| SALOGHO Victoria | [GitHub](https://github.com/) | Student & Teacher menus |
+| OUEDRAOGO Latifatou | [GitHub](https://github.com/) | Grades menu, utils.py, README |
 | OUEDRAOGO Oumarou |(https://github.com/omar04ryoued-cmyk) | school.py, person.py, README ,__init__.py|
+| SAGNON Aminata | [GitHub](https://github.com/) | Grades menu, utils.py, README |
 
 
 
