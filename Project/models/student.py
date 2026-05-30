@@ -1,13 +1,5 @@
-
-"""
-models/student.py
------------------
-Contains the Student class which inherits from Person.
-"""
-
 from models.person import Person
 from constants     import PASSING_GRADE, MENTIONS, MENTION_THRESHOLDS
-
 
 class Student(Person):
     """
@@ -16,64 +8,50 @@ class Student(Person):
     Demonstrates: inheritance, encapsulation, polymorphism.
     """
 
-    def __init__(self, id: str, last_name: str, first_name: str, email: str,
-                 class_level: str, date_of_birth: str):
-        """
-        Constructor for Student.
-        :param class_level: student's class/year (e.g. L1, L2)
-        :param date_of_birth: date of birth (DD/MM/YYYY)
-        """
-        super().__init__(id, last_name, first_name, email)  # call parent constructor
-        self.__class_level   = class_level
-        self.__date_of_birth = date_of_birth
-        self.__grades: dict  = {}    # {subject: [grade1, grade2, ...]}
-        self.__absences: list = []   # [{"date": ..., "subject": ...}]
-
-    # ── Getters ──────────────────────────────────────────────
+    def __init__(self, id, last_name, first_name, email, class_level, date_of_birth):
+        super().init__(id, last_name, first_name, email)  # call parent constructor
+        self.class_level = class_level
+        self.date_of_birth = date_of_birth
+        self.grades: dict  = {}    # {subject: [grade1, grade2, ...]}
+        self.absences: list = []   # [{"date": ..., "subject": ...}]
 
     def get_class_level(self) -> str:
         """Returns the student's class level."""
-        return self.__class_level
+        return self.class_level
 
     def get_grades(self) -> dict:
         """Returns the grades dictionary."""
-        return self.__grades
+        return self.grades
 
     def get_absences(self) -> list:
         """Returns the list of absences."""
-        return self.__absences
+        return self.absences
 
     def get_absence_count(self) -> int:
         """Returns the total number of absences."""
-        return len(self.__absences)
+        return len(self.absences)
 
-    # ── Grades & Averages ────────────────────────────────────
-
-    def add_grade(self, subject: str, grade: float):
+    def add_grade(self, subject, grade):
         """
         Adds a grade for a given subject.
-        :param subject: subject name
-        :param grade: grade between 0 and 20
         """
-        if subject not in self.__grades:
-            self.__grades[subject] = []
-        self.__grades[subject].append(grade)
+        if subject not in self.grades:
+            self.grades[subject] = []
+        self.grades[subject].append(grade)
 
-    def get_subject_average(self, subject: str) -> float:
+    def get_subject_average(self, subject) -> float:
         """
         Calculates the average for a subject.
-        :param subject: subject name
-        :return: average or 0.0 if no grades
         """
-        if subject in self.__grades and len(self.__grades[subject]) > 0:
-            return sum(self.__grades[subject]) / len(self.__grades[subject])
+        if subject in self.grades and len(self.grades[subject]) > 0:
+            return sum(self.grades[subject]) / len(self.grades[subject])
         return 0.0
 
     def get_overall_average(self) -> float:
         """Calculates the overall average across all subjects."""
-        if not self.__grades:
+        if not self.grades:
             return 0.0
-        averages = [self.get_subject_average(s) for s in self.__grades]
+        averages = [self.get_subject_average(s) for s in self.grades]
         return sum(averages) / len(averages)
 
     def is_passing(self) -> bool:
@@ -92,17 +70,11 @@ class Student(Person):
                 current_mention = MENTIONS[i]
         return current_mention
 
-    # ── Absences ─────────────────────────────────────────────
-
     def add_absence(self, date: str, subject: str):
         """
         Records an absence.
-        :param date: absence date (DD/MM/YYYY)
-        :param subject: subject missed
         """
-        self.__absences.append({"date": date, "subject": subject})
-
-    # ── Display (polymorphism) ────────────────────────────────
+        self.absences.append({"date": date, "subject": subject})
 
     def display_info(self):
         """
@@ -113,24 +85,22 @@ class Student(Person):
         print(f"  STUDENT  : {self.get_full_name()}")
         print(f"{'='*45}")
         super().display_info()       # call parent method
-        print(f"  Class    : {self.__class_level}")
-        print(f"  DOB      : {self.__date_of_birth}")
+        print(f"  Class : {self.class_level}")
+        print(f"  DOB : {self.date_of_birth}")
         print(f"  Absences : {self.get_absence_count()}")
-        avg    = self.get_overall_average()
+        avg = self.get_overall_average()
         status = "PASSING ✓" if self.is_passing() else "FAILING ✗"
         print(f"  Average  : {avg:.2f}/20  ({status})")
         print(f"  Mention  : {self.get_mention()}")
 
-    # ── JSON Serialization ────────────────────────────────────
-
     def to_dict(self) -> dict:
         """Converts the student to a dictionary for JSON saving."""
         data = super().to_dict()
-        data["type"]          = "student"
-        data["class_level"]   = self.__class_level
-        data["date_of_birth"] = self.__date_of_birth
-        data["grades"]        = self.__grades
-        data["absences"]      = self.__absences
+        data["type"] = "student"
+        data["class_level"]  = self.class_level
+        data["date_of_birth"] = self.date_of_birth
+        data["grades"] = self.grades
+        data["absences"] = self.absences
         return data
 
     @staticmethod
