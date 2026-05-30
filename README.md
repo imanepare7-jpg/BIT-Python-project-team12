@@ -15,3 +15,17 @@ cd BIT-Python-project-team12.git
 
 # 3. Run the application
 python main.py
+
+## Features
+
+-  Add, list, search, and delete students
+-  Add, list, and manage teachers
+-  Create and manage subjects with credits
+-  Record grades for students per subject
+-  Calculate subject and overall averages automatically
+-  Generate a full report card for any student
+-  Record absences per student per subject
+-  Display class statistics (average, pass rate, highest/lowest grade)
+-  Assign teachers to subjects
+-  Automatic data saving to a JSON file
+-  Automatic data loading at startup
