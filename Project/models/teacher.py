@@ -33,6 +33,11 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
     def get_phone(self) -> str:
         """Returns the phone number."""
         return self.__phone
+        
+    def get_subjects(self) -> list:
+        """Returns the list of subjects taught."""
+        return self.__subjects
+
 
 
 
