@@ -1,7 +1,7 @@
 
 import datetime
 
-from ecole  import Ecole
+from Project.school  import Ecole
 from utils  import effacer_ecran, pause, afficher_entete, lire_float, lire_entier
 from constants import SCHOOL_NAME
 

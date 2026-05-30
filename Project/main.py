@@ -1,5 +1,5 @@
 # ── Imports ──────────────────────────────────────────────────
-from ecole      import Ecole
+from Project.school      import Ecole
 from menus      import menu_principal
 from constants  import SCHOOL_NAME
 from models     import Etudiant, Professeur   
