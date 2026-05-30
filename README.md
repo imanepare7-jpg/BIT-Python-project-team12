@@ -50,7 +50,7 @@ Project/
        teacher.py    # Teacher class — inherits from Person
        subject.py    # Subject class — represents a course
 
-## OOP Structure
+ OOP Structure
 
 | Class | File | Inherits From | Key Methods |
 |-------|------|---------------|-------------|
@@ -60,7 +60,7 @@ Project/
 | Subject | models/subject.py | - | set_teacher(), display_info() |
 | School | school.py | - | add_student(), generate_report_card(), save(), load() |
 
-## The 4 OOP Principles
+ The 4 OOP Principles
 
 | Principle | How it is implemented |
 |-----------|----------------------|
@@ -71,8 +71,6 @@ Project/
 
 
 GROUP MEMBERS 
-
-## Group Members
 
 | Name | GitHub Profile Link | 
 |------|---------------------|
