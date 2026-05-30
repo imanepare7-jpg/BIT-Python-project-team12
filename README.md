@@ -1,4 +1,5 @@
 SCHOOL MANAGEMENT SYSTEM
+
 This project is a complete school management system that allows a school administration to easily manage its data: student enrollment, teacher registration, grade tracking, report card generation, absence recording, and class statistics. All data is automatically saved in a JSON file and reloaded every time the program starts.
 
 HOW TO RUN THE PROGRAMM
