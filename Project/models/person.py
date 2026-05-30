@@ -29,7 +29,7 @@ class Person:
 
     # ── Methods ──────────────────────────────────────────────
 
-    def display_info(self)
+    def display_info(self):
         print(f"  ID         : {self.__id}")
         print(f"  Name       : {self.get_full_name()}")
         print(f"  Email      : {self.__email}")

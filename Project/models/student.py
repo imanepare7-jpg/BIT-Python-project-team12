@@ -1,5 +1,5 @@
 
-      """
+"""
 models/student.py
 -----------------
 Contains the Student class which inherits from Person.

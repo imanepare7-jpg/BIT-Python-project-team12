@@ -14,7 +14,7 @@ class Subject:
     def __init__(self, code: str, name: str, credits: int,
                  teacher_id: str = ""):
         """
-        Constructor for Subject.
+        :Constructor for Subject.
         :param code: unique subject code (e.g. MATH101)
         :param name: full subject name
         :param credits: number of credits (int)

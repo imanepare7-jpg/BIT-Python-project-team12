@@ -25,59 +25,6 @@ from constants import SCHOOL_NAME
 from models    import Student, Teacher    # import from the models package
 
 
-# ── OOP Demonstration (explicit object creation) ──────────────
-
-def demo_objects():
-    """
-    Explicitly creates objects to demonstrate:
-    - Class instantiation (Student, Teacher)
-    - Inheritance (both inherit from Person)
-    - Polymorphism (display_info() behaves differently)
-    - Arithmetic operations (averages, percentages)
-    - Tuple usage (get_mention() with MENTIONS and MENTION_THRESHOLDS)
-    """
-    print("\n" + "="*55)
-    print("  OOP DEMONSTRATION")
-    print("="*55)
-
-    # Explicit creation of 2 Student objects (inheriting from Person)
-    student1 = Student("DEM001", "Kabore", "Alice",
-                       "alice@bit.bf", "L1", "01/01/2004")
-    student2 = Student("DEM002", "Traore", "Bob",
-                       "bob@bit.bf",  "L1", "05/06/2003")
-
-    # Grade lists + for loop
-    grades_alice: list = [14.0, 16.0, 12.0]
-    grades_bob:   list = [8.0,  9.5,  7.0]
-
-    for grade in grades_alice:
-        student1.add_grade("Mathematics", grade)
-    for grade in grades_bob:
-        student2.add_grade("Mathematics", grade)
-
-    # Explicit arithmetic operations
-    sum_alice:    float = sum(grades_alice)              # 42.0
-    avg_alice:    float = sum_alice / len(grades_alice)  # 14.0
-    pass_rate:    float = (1 / 2) * 100                  # 50%
-
-    print(f"\n  Sum of Alice's grades : {sum_alice}")
-    print(f"  Alice's average       : {avg_alice:.2f}/20")
-    print(f"  Class pass rate       : {pass_rate:.0f}%")
-    print(f"  Alice's mention       : {student1.get_mention()}")
-    print(f"  Bob's mention         : {student2.get_mention()}")
-
-    # Explicit creation of a Teacher object (inheriting from Person)
-    teacher1 = Teacher("DEM_T01", "Blebo", "Kweyakie",
-                       "blebo@bit.bf", "Computer Science", "+226 00 00 00")
-    teacher1.add_subject("Mathematics")
-
-    # POLYMORPHISM — same method name, DIFFERENT behavior
-    print("\n  --- Polymorphism: display_info() ---")
-    student1.display_info()   # Student version
-    teacher1.display_info()   # Teacher version
-
-    print("\n  [Demonstration complete]\n")
-
 
 # ── Main Function ─────────────────────────────────────────────
 
