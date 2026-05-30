@@ -1,112 +1,145 @@
+
+      """
+models/student.py
+-----------------
+Contains the Student class which inherits from Person.
 """
-models/etudiant.py
-------------------
-Contient la classe Etudiant qui hérite de Person.
-"""
 
-from models.Human  import Person
-from constants import PASSING_GRADE, MENTIONS, SEUILS_MENTIONS
+from models.person import Person
+from constants     import PASSING_GRADE, MENTIONS, MENTION_THRESHOLDS
 
 
-class Etudiant(Person):
-   " Ajoute : classe, date de naissance, notes, absences. "
+class Student(Person):
+    """
+    Represents a student. Inherits from Person.
+    Adds: class level, date of birth, grades, absences.
+    Demonstrates: inheritance, encapsulation, polymorphism.
+    """
 
-    def __init__(self, id: str, nom: str, prenom: str, email: str,
-                 classe: str, date_naissance: str):
-        super().__init__(id, nom, prenom, email)   
-        self.__classe          = classe
-        self.__date_naissance  = date_naissance
-        self.__notes: dict     = {}  
-        self.__absences: list  = []   
+    def __init__(self, id: str, last_name: str, first_name: str, email: str,
+                 class_level: str, date_of_birth: str):
+        """
+        Constructor for Student.
+        :param class_level: student's class/year (e.g. L1, L2)
+        :param date_of_birth: date of birth (DD/MM/YYYY)
+        """
+        super().__init__(id, last_name, first_name, email)  # call parent constructor
+        self.__class_level   = class_level
+        self.__date_of_birth = date_of_birth
+        self.__grades: dict  = {}    # {subject: [grade1, grade2, ...]}
+        self.__absences: list = []   # [{"date": ..., "subject": ...}]
 
-    def get_classe(self) -> str:
-        """Retourne la classe de l'étudiant."""
-        return self.__classe
+    # ── Getters ──────────────────────────────────────────────
 
-    def get_notes(self) -> dict:
-        """Retourne le dictionnaire des notes."""
-        return self.__notes
+    def get_class_level(self) -> str:
+        """Returns the student's class level."""
+        return self.__class_level
+
+    def get_grades(self) -> dict:
+        """Returns the grades dictionary."""
+        return self.__grades
 
     def get_absences(self) -> list:
-        """Retourne la liste des absences."""
+        """Returns the list of absences."""
         return self.__absences
 
-    def get_nombre_absences(self) -> int:
-        """Retourne le nombre total d'absences."""
+    def get_absence_count(self) -> int:
+        """Returns the total number of absences."""
         return len(self.__absences)
 
-    # ── Notes & Moyennes ─────────────────────────────────────
+    # ── Grades & Averages ────────────────────────────────────
 
-    def ajouter_note(self, matiere: str, note: float):
-        "  Ajoute une note pour une matière donnée.  "
-        if matiere not in self.__notes:
-            self.__notes[matiere] = []
-        self.__notes[matiere].append(note)
+    def add_grade(self, subject: str, grade: float):
+        """
+        Adds a grade for a given subject.
+        :param subject: subject name
+        :param grade: grade between 0 and 20
+        """
+        if subject not in self.__grades:
+            self.__grades[subject] = []
+        self.__grades[subject].append(grade)
 
-    def get_moyenne_matiere(self, matiere: str) -> float:
-        """Calcule la moyenne pour une matière. """
-        if matiere in self.__notes and len(self.__notes[matiere]) > 0:
-            return sum(self.__notes[matiere]) / len(self.__notes[matiere])
+    def get_subject_average(self, subject: str) -> float:
+        """
+        Calculates the average for a subject.
+        :param subject: subject name
+        :return: average or 0.0 if no grades
+        """
+        if subject in self.__grades and len(self.__grades[subject]) > 0:
+            return sum(self.__grades[subject]) / len(self.__grades[subject])
         return 0.0
 
-    def get_moyenne_generale(self) -> float:
-        """Calcule la moyenne générale sur toutes les matières."""
-        if not self.__notes:
+    def get_overall_average(self) -> float:
+        """Calculates the overall average across all subjects."""
+        if not self.__grades:
             return 0.0
-        moyennes = [self.get_moyenne_matiere(m) for m in self.__notes]
-        return sum(moyennes) / len(moyennes)
+        averages = [self.get_subject_average(s) for s in self.__grades]
+        return sum(averages) / len(averages)
 
-    def est_admis(self) -> bool:
-        """Retourne True si la moyenne générale >= note de passage."""
-        return self.get_moyenne_generale() >= PASSING_GRADE
+    def is_passing(self) -> bool:
+        """Returns True if the overall average is >= the passing grade."""
+        return self.get_overall_average() >= PASSING_GRADE
 
     def get_mention(self) -> str:
         """
-        Retourne la mention correspondant à la moyenne.
-        Utilise les tuples MENTIONS et SEUILS_MENTIONS.
+        Returns the grade mention based on the overall average.
+        Uses the MENTIONS and MENTION_THRESHOLDS tuples from constants.py
         """
-        moyenne: float = self.get_moyenne_generale()
-        mention_actuelle: str = MENTIONS[0]   
-        for i in range(len(SEUILS_MENTIONS)):
-            if moyenne >= SEUILS_MENTIONS[i]:
-                mention_actuelle = MENTIONS[i]
-        return mention_actuelle
+        average: float = self.get_overall_average()
+        current_mention: str = MENTIONS[0]   # "Fail" by default
+        for i in range(len(MENTION_THRESHOLDS)):
+            if average >= MENTION_THRESHOLDS[i]:
+                current_mention = MENTIONS[i]
+        return current_mention
 
-    def ajouter_absence(self, date: str, matiere: str):
-        """Enregistre une absence."""
-        self.__absences.append({"date": date, "matiere": matiere})
+    # ── Absences ─────────────────────────────────────────────
 
-    def afficher_info(self):
-        """Affiche les informations complètes de l'étudiant."""
+    def add_absence(self, date: str, subject: str):
+        """
+        Records an absence.
+        :param date: absence date (DD/MM/YYYY)
+        :param subject: subject missed
+        """
+        self.__absences.append({"date": date, "subject": subject})
+
+    # ── Display (polymorphism) ────────────────────────────────
+
+    def display_info(self):
+        """
+        Displays full student information.
+        Overrides the Person method — polymorphism.
+        """
         print(f"\n{'='*45}")
-        print(f"  ETUDIANT : {self.get_nom_complet()}")
+        print(f"  STUDENT  : {self.get_full_name()}")
         print(f"{'='*45}")
-        super().afficher_info()     
-        print(f"  Classe   : {self.__classe}")
-        print(f"  Naissance: {self.__date_naissance}")
-        print(f"  Absences : {self.get_nombre_absences()}")
-        moy    = self.get_moyenne_generale()
-        statut = "ADMIS ✓" if self.est_admis() else "NON ADMIS ✗"
-        print(f"  Moyenne  : {moy:.2f}/20  ({statut})")
+        super().display_info()       # call parent method
+        print(f"  Class    : {self.__class_level}")
+        print(f"  DOB      : {self.__date_of_birth}")
+        print(f"  Absences : {self.get_absence_count()}")
+        avg    = self.get_overall_average()
+        status = "PASSING ✓" if self.is_passing() else "FAILING ✗"
+        print(f"  Average  : {avg:.2f}/20  ({status})")
         print(f"  Mention  : {self.get_mention()}")
 
+    # ── JSON Serialization ────────────────────────────────────
+
     def to_dict(self) -> dict:
-        """Convertit l'étudiant en dictionnaire pour sauvegarde JSON."""
+        """Converts the student to a dictionary for JSON saving."""
         data = super().to_dict()
-        data["type"]            = "etudiant"
-        data["classe"]          = self.__classe
-        data["date_naissance"]  = self.__date_naissance
-        data["notes"]           = self.__notes
-        data["absences"]        = self.__absences
+        data["type"]          = "student"
+        data["class_level"]   = self.__class_level
+        data["date_of_birth"] = self.__date_of_birth
+        data["grades"]        = self.__grades
+        data["absences"]      = self.__absences
         return data
 
     @staticmethod
-    def from_dict(data: dict) -> "Etudiant":
-        """Recrée un objet Etudiant depuis un dictionnaire (chargement fichier)."""
-        e = Etudiant(
-            data["id"], data["nom"], data["prenom"], data["email"],
-            data["classe"], data["date_naissance"]
+    def from_dict(data: dict) -> "Student":
+        """Recreates a Student object from a dictionary (file loading)."""
+        s = Student(
+            data["id"], data["last_name"], data["first_name"], data["email"],
+            data["class_level"], data["date_of_birth"]
         )
-        e._Etudiant__notes    = data.get("notes", {})
-        e._Etudiant__absences = data.get("absences", [])
-        return e
+        s._Student__grades   = data.get("grades", {})
+        s._Student__absences = data.get("absences", [])
+        return s
