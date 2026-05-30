@@ -1,11 +1,11 @@
 """
 models/__init__.py
 ------------------
-Initialise le package models.
-Permet d'importer facilement les classes depuis l'extérieur.
+Initializes the models package.
+Allows easy importing of all classes from outside.
 """
 
-from models.Human      import Person
-from models.etudiant    import Etudiant
-from models.professeur  import Professeur
-from models.matiere     import Matiere
+from models.person  import Person
+from models.student import Student
+from models.teacher import Teacher
+from models.subject import Subject
