@@ -8,10 +8,10 @@ This project is a complete school management system that allows a school adminis
 
 
 # 1. Clone the repository
-git clone 
+git clone https://github.com/imanepare7-jpg/BIT-Python-project-team12.git
 
 # 2. Go into the project folder
-cd school-management
+cd BIT-Python-project-team12.git
 
 # 3. Run the application
 python main.py
