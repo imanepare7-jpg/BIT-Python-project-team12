@@ -1,4 +1,3 @@
-
 import os
 import json
 import datetime
@@ -19,7 +18,6 @@ class School:
     def __init__(self, name: str):
         """
         Constructor for School.
-        :param name: school name
         """
         self.__name                  = name
         self.__students: dict        = {}   # {id: Student}
@@ -32,13 +30,11 @@ class School:
         """Returns the school name."""
         return self.__name
 
-    # ── Student Management ────────────────────────────────────
-
     def add_student(self, last_name: str, first_name: str, email: str,
                     class_level: str, date_of_birth: str) -> Student:
         """
         Creates and adds a new student with an automatic ID.
-        :return: the created Student object
+        return: the created Student object
         """
         student_id = f"STU{self.__student_counter:04d}"
         self.__student_counter += 1      # arithmetic operation
@@ -70,8 +66,6 @@ class School:
             if term in s.get_last_name().lower() or term in s.get_first_name().lower()
         ]
 
-    # ── Teacher Management ────────────────────────────────────
-
     def add_teacher(self, last_name: str, first_name: str, email: str,
                     specialization: str, phone: str) -> Teacher:
         """Creates and adds a new teacher."""
@@ -97,8 +91,6 @@ class School:
             return True
         return False
 
-    # ── Subject Management ────────────────────────────────────
-
     def add_subject(self, code: str, name: str, credits: int) -> Subject:
         """Creates and adds a new subject."""
         subject = Subject(code, name, credits)
@@ -120,13 +112,11 @@ class School:
             return True
         return False
 
-    # ── Grades & Absences ─────────────────────────────────────
-
     def add_grade(self, student_id: str, subject_code: str,
                   grade: float) -> bool:
         """
         Adds a grade to a student for a subject.
-        :return: True if successful, False otherwise
+        return: True if successful, False otherwise
         """
         student = self.get_student(student_id)
         subject = self.get_subject(subject_code)
@@ -145,12 +135,9 @@ class School:
             return True
         return False
 
-    # ── Report Card ───────────────────────────────────────────
-
     def generate_report_card(self, student_id: str):
         """
         Generates and displays a student's report card.
-        :param student_id: student ID
         """
         student = self.get_student(student_id)
         if not student:
@@ -191,8 +178,6 @@ class School:
         print(f"  ABSENCES         : {student.get_absence_count()} absence(s)")
         print(f"{'#'*52}\n")
 
-    # ── Statistics ────────────────────────────────────────────
-
     def class_statistics(self, class_level: str):
         """Displays statistics for a given class."""
         students = [
@@ -221,8 +206,6 @@ class School:
         print(f"  Lowest grade     : {lowest_grade:.2f}/20")
         print(f"  Pass rate        : {len(passing)}/{len(students)} ({pass_rate:.1f}%)")
         print(f"{'='*52}\n")
-
-    # ── Save / Load ───────────────────────────────────────────
 
     def save(self):
         """Saves all data to the JSON file."""
