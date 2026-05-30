@@ -1,42 +1,26 @@
-"""
-utils.py
---------
-Utility functions reused across all menus.
-Imported by menus.py and main.py
-"""
-
 import os
-
 
 def clear_screen():
     """Clears the terminal depending on the operating system."""
     os.system('cls' if os.name == 'nt' else 'clear')
-
 
 def pause():
     """Pauses and waits for the user to press Enter."""
     input("\n  [Press Enter to continue...]")
 
 
-def display_header(school_name: str):
-    """
-    Displays the application header.
-    :param school_name: school name to display
-    """
+def display_header(school_name):
+   
     print("\n" + "="*55)
     print(f"   {school_name}")
     print(f"   School Management System v1.0")
     print("="*55)
 
 
-def read_float(message: str, minimum: float = 0, maximum: float = 20) -> float:
+def read_float(message, minimum = 0, maximum = 20) -> float:
     """
     Reads a valid decimal number between minimum and maximum.
     Uses a while loop and handles errors with try/except.
-    :param message: message displayed to the user
-    :param minimum: minimum accepted value
-    :param maximum: maximum accepted value
-    :return: valid float
     """
     while True:
         try:
@@ -49,12 +33,9 @@ def read_float(message: str, minimum: float = 0, maximum: float = 20) -> float:
             print("  [!] Please enter a valid number.")
 
 
-def read_integer(message: str, minimum: int = 1) -> int:
+def read_integer(message, minimum = 1) -> int:
     """
     Reads a valid integer >= minimum.
-    :param message: message displayed to the user
-    :param minimum: minimum accepted value
-    :return: valid integer
     """
     while True:
         try:
