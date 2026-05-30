@@ -18,7 +18,7 @@ Steps
 git clone https://github.com/imanepare7-jpg/BIT-Python-project-team12.git
 
 2. Go into the project folder
-cd BIT-Python-project-team12.git
+cd BIT-Python-project-team12
 
 3. Run the application
 python main.py
