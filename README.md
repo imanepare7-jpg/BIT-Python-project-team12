@@ -74,16 +74,15 @@ GROUP MEMBERS
 
 ## Group Members
 
-| Name | GitHub Profile Link | Contribution |
-|------|---------------------|--------------|
-| PARE Kowoma Imane | [GitHub](https://github.com/) | Person class, Student class |
-| OUEDRAOGO Jessica | [GitHub](https://github.com/) | Teacher class, Subject class |
-| OUEDRAOGO Franck | [GitHub](https://github.com/) | School class (save/load, statistics) |
-| SALOGHO Victoria | [GitHub](https://github.com/) | Student & Teacher menus |
-| OUEDRAOGO Latifatou | [GitHub](https://github.com/) | Grades menu, utils.py, README |
-| OUEDRAOGO Oumarou |(https://github.com/omar04ryoued-cmyk) | school.py, person.py, README ,__init__.py|
-| SAGNON Aminata | [GitHub](https://github.com/) | Grades menu, utils.py, README |
-
+| Name | GitHub Profile Link | 
+|------|---------------------|
+| PARE Kowoma Imane |(https://github.com/imanepare7-jpg) | 
+| OUEDRAOGO Jessica |(https://github.com/ouedraogoadelaide57-hash) | 
+| OUEDRAOGO Franck |(https://github.com/Ouedraogo-Franck) | 
+| SALOGHO Victoria |(https://github.com/victoriasalogho-rgb) |
+| OUEDRAOGO Latifatou |(https://github.com/olatifa044-prog) | 
+| OUEDRAOGO Oumarou |(https://github.com/omar04ryoued-cmyk) | 
+| SAGNON Aminata |(https://github.com/aminatasagnon02-ops) |
 
 
 
