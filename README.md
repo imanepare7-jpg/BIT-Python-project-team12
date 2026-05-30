@@ -72,15 +72,15 @@ Project/
 
 GROUP MEMBERS 
 
-| Name | GitHub Profile Link | 
-|------|---------------------|
-| PARE Kowoma Imane |(https://github.com/imanepare7-jpg) | 
-| OUEDRAOGO Jessica |(https://github.com/ouedraogoadelaide57-hash) | 
-| OUEDRAOGO Franck |(https://github.com/Ouedraogo-Franck) | 
-| SALOGHO Victoria |(https://github.com/victoriasalogho-rgb) |
-| OUEDRAOGO Latifatou |(https://github.com/olatifa044-prog) | 
-| OUEDRAOGO Oumarou |(https://github.com/omar04ryoued-cmyk) | 
-| SAGNON Aminata |(https://github.com/aminatasagnon02-ops) |
+| Name | GitHub Profile Link | Contribution |
+|------|---------------------|----------------------|
+| PARE Kowoma Imane |(https://github.com/imanepare7-jpg) | the readme the student.py constant.py menu.py util.py main.py school.py person.py _init_.py subject.py |
+| OUEDRAOGO Jessica |(https://github.com/ouedraogoadelaide57-hash) |the student.py constant.py menu.py util.py main.py school_data.JSON|
+| OUEDRAOGO Franck |(https://github.com/Ouedraogo-Franck) | the main part of the menu.py|
+| SALOGHO Victoria |(https://github.com/victoriasalogho-rgb) |the utils.py|
+| OUEDRAOGO Latifatou |(https://github.com/olatifa044-prog) |  the menu.py and the main.py|
+| OUEDRAOGO Oumarou |(https://github.com/omar04ryoued-cmyk) | the readme school.py person.py school_data.JSON _init_.py|
+| SAGNON Aminata |(https://github.com/aminatasagnon02-ops) | the teacher.py|
 
 
 
