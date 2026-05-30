@@ -1,7 +1,9 @@
 """
 models/teacher.py
 -----------------
-Contains the Teacher class which inherits from Person.
+This module defines the teacher class, which extends the person class.
+It stores teacher-specific information such as specialisation,
+phune number, and subjects taught .
 """
 
 from models.person import Person
