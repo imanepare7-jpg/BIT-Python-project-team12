@@ -77,11 +77,11 @@ THE 4 OOP Principles in This Project
 GROUP MEMBERS 
 
 | Name              | GitHub                     | Contribution |
-| Member 1 | [@github](https://github.com/) | Person class, Student class |
-| Member 2 | [@github](https://github.com/) | Teacher class, Subject class |
-| Member 3 | [@github](https://github.com/) | School class (save/load, statistics) |
-| Member 4 | [@github](https://github.com/) | Student & Teacher menus |
-| OUEDRAOGO Oumarou | [@github](https://github.com/) | school.py, person.py, README |
+| Member 1          | [@github](https://github.com/) | Person class, Student class |
+| Member 2          | [@github](https://github.com/) | Teacher class, Subject class |
+| Member 3          | [@github](https://github.com/) | School class (save/load, statistics) |
+| Member 4          | [@github](https://github.com/) | Student & Teacher menus |
+| OUEDRAOGO Oumarou |(https://github.com/omar04ryoued-cmyk) | school.py, person.py, README ,__init__.py|
 
 
 
