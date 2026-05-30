@@ -1,71 +1,47 @@
-"""
-models/subject.py
------------------
-Contains the Subject class representing a course.
-"""
-
-
 class Subject:
-    """
-    Represents a subject / course in the school.
-    Attributes: code, name, credits, assigned teacher.
-    """
-
-    def __init__(self, code: str, name: str, credits: int,
-                 teacher_id: str = ""):
+    def __init__(self, code, name, credits,
+                 teacher_id= ""):
         """
-        :Constructor for Subject.
-        :param code: unique subject code (e.g. MATH101)
-        :param name: full subject name
-        :param credits: number of credits (int)
-        :param teacher_id: ID of the assigned teacher
+        Constructor for Subject.
         """
-        self.__code       = code
-        self.__name       = name
-        self.__credits: int = credits     # integer type
-        self.__teacher_id = teacher_id
-
-    # ── Getters ──────────────────────────────────────────────
+        self.code = code
+        self.name = name
+        self.credits = credits     # integer type
+        self.teacher_id = teacher_id
 
     def get_code(self) -> str:
         """Returns the subject code."""
-        return self.__code
+        return self.code
 
     def get_name(self) -> str:
         """Returns the subject name."""
-        return self.__name
+        return self.name
 
     def get_credits(self) -> int:
         """Returns the number of credits."""
-        return self.__credits
+        return self.credits
 
     def get_teacher_id(self) -> str:
         """Returns the assigned teacher's ID."""
-        return self.__teacher_id
-
-    # ── Setter ───────────────────────────────────────────────
+        return self.teacher_id
 
     def set_teacher(self, teacher_id: str):
         """Assigns a teacher to this subject."""
-        self.__teacher_id = teacher_id
-
-    # ── Display ──────────────────────────────────────────────
+        self.teacher_id = teacher_id
 
     def display_info(self):
         """Displays subject information."""
-        teacher = self.__teacher_id if self.__teacher_id else "Not assigned"
-        print(f"  [{self.__code}] {self.__name} — "
-              f"{self.__credits} credit(s) — Teacher ID: {teacher}")
-
-    # ── JSON Serialization ────────────────────────────────────
+        teacher = self.teacher_id if self.teacher_id else "Not assigned"
+        print(f"  [{self.code}] {self.name} — "
+              f"{self.credits} credit(s) — Teacher ID: {teacher}")
 
     def to_dict(self) -> dict:
         """Converts the subject to a dictionary for JSON saving."""
         return {
-            "code":       self.__code,
-            "name":       self.__name,
-            "credits":    self.__credits,
-            "teacher_id": self.__teacher_id
+            "code": self.code,
+            "name": self.name,
+            "credits": self.credits,
+            "teacher_id": self.teacher_id
         }
 
     @staticmethod
