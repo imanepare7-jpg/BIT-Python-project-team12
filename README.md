@@ -29,3 +29,37 @@ python main.py
 -  Assign teachers to subjects
 -  Automatic data saving to a JSON file
 -  Automatic data loading at startup
+
+
+## Project Structure
+
+school_project/
+ main.py           # Entry point 
+ constants.py      # Global constants 
+ school.py         # School class
+ utils.py          # Utility functions 
+ menus.py          # All user interface menus
+ school_data.json  # Auto-generated data file (created on first run)
+
+ models/           
+       __init__.py   # Package initializer
+       person.py     # Person class — parent class (inheritance base)
+       student.py    # Student class — inherits from Person
+       teacher.py    # Teacher class — inherits from Person
+       subject.py    # Subject class — represents a course
+
+
+## Group Members
+
+| Name              | GitHub                     | Contribution |
+| Member 1 | [@github](https://github.com/) | Person class, Student class |
+| Member 2 | [@github](https://github.com/) | Teacher class, Subject class |
+| Member 3 | [@github](https://github.com/) | School class (save/load, statistics) |
+| Member 4 | [@github](https://github.com/) | Student & Teacher menus |
+| OUEDRAOGO Oumarou | [@github](https://github.com/) | school.py, person.py, README |
+
+
+
+
+
+
