@@ -66,7 +66,7 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
         )
         t._Teacher__subjects = data.get("subjects", [])
         return t
- ── Display (polymorphism) ────────────────────────────────
+ #── Display (polymorphism) ────────────────────────────────
 
     def display_info(self):
         """
