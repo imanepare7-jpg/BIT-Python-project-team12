@@ -59,15 +59,5 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
 
     # ── JSON Serialization ────────────────────────────────────
 
-    def to_dict(self) -> dict:
-        """Converts the teacher to a dictionary for JSON saving."""
-        data = super().to_dict()
-        data["type"]           = "teacher"
-        data["specialization"] = self.__specialization
-        data["phone"]          = self.__phone
-        data["subjects"]       = self.__subjects
-        return data
-
-
 
 
