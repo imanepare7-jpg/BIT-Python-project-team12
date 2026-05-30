@@ -24,3 +24,10 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
         self.__specialization = specialization
         self.__phone          = phone
         self.__subjects: list = []
+                         # ── Getters ──────────────────────────────────────────────
+
+    def get_specialization(self) -> str:
+        """Returns the teacher's specialization."""
+        return self.__specialization
+
+
