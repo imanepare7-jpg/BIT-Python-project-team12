@@ -56,5 +56,21 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
         data["phone"]          = self.__phone
         data["subjects"]       = self.__subjects
         return data
+        
 
+    @staticmethod
+    def from_dict(data: dict) -> "Teacher":
+        """Recreates a Teacher object from a dictionary."""
+        t = Teacher(
+            data["id"], data["last_name"], data["first_name"], data["email"],
+            data["specialization"], data["phone"]
+        )
+        t._Teacher__subjects = data.get("subjects", [])
+        return t
+ ── Display (polymorphism) ────────────────────────────────
+
+    def display_info(self):
+        """
+        Displays full teacher information.
+        Overrides th
 
