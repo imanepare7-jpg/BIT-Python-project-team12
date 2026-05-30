@@ -25,21 +25,6 @@ from constants import SCHOOL_NAME
 from models    import Student, Teacher    # import from the models package
 
 
-# ── OOP Demonstration (explicit object creation) ──────────────
-
-def demo_objects():
-    """
-    Explicitly creates objects to demonstrate:
-    - Class instantiation (Student, Teacher)
-    - Inheritance (both inherit from Person)
-    - Polymorphism (display_info() behaves differently)
-    - Arithmetic operations (averages, percentages)
-    - Tuple usage (get_mention() with MENTIONS and MENTION_THRESHOLDS)
-    """
-    print("\n" + "="*55)
-    print("  OOP DEMONSTRATION")
-    print("="*55)
-
     # Explicit creation of 2 Student objects (inheriting from Person)
     student1 = Student("DEM001", "Kabore", "Alice",
                        "alice@bit.bf", "L1", "01/01/2004")
@@ -94,4 +79,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-
+  
