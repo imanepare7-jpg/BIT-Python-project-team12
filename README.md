@@ -6,6 +6,13 @@ A command-line application built in Python to manage students, teachers, subject
 
 This project is a complete school management system that allows a school administration to easily manage its data: student enrollment, teacher registration, grade tracking, report card generation, absence recording, and class statistics. All data is automatically saved in a JSON file and reloaded every time the program starts.
 
+## How to Run the Project
+
+### Requirements
+  Python 3.8 or higher
+  No external libraries required (standard modules only)
+
+### Steps
 
 # 1. Clone the repository
 git clone https://github.com/imanepare7-jpg/BIT-Python-project-team12.git
