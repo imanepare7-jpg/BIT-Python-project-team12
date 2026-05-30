@@ -46,6 +46,27 @@ def __init__(self, id: str, last_name: str, first_name: str, email: str,
             self.__subjects.append(subject)
 
 
+    #e Person method — polymorphism.
+        """
+        print(f"\n{'='*45}")
+        print(f"  TEACHER      : {self.get_full_name()}")
+        print(f"{'='*45}")
+        super().display_info()       # call parent method
+        print(f"  Specialization : {self.__specialization}")
+        print(f"  Phone          : {self.__phone}")
+        subjects_str = ", ".join(self.__subjects) if self.__subjects else "None"
+        print(f"  Subjects       : {subjects_str}")
+
+    # ── JSON Serialization ────────────────────────────────────
+
+    def to_dict(self) -> dict:
+        """Converts the teacher to a dictionary for JSON saving."""
+        data = super().to_dict()
+        data["type"]           = "teacher"
+        data["specialization"] = self.__specialization
+        data["phone"]          = self.__phone
+        data["subjects"]       = self.__subjects
+        return data
 
 
 
